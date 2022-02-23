@@ -5,61 +5,50 @@ import {
   Text,
   View,
   TouchableOpacity,
-  KeyboardAvoidingView,
-  ScrollView,
 } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 import LinearGradient from 'react-native-linear-gradient';
 
 import Header from '../assets/img/header-login.png';
 import FormInput from '../components/FormInput';
 
-import {windowHeight} from '../utils/Dimentions';
+import {windowHeight, windowWidth} from '../utils/Dimentions';
 
 const LoginScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar
-        translucent={true}
-        backgroundColor={'transparent'}
-        barStyle={'dark-content'}
-      />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.headerWrapper}>
-          <Image style={styles.imgHeader} source={Header} />
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#ffffff" barStyle={'dark-content'} />
+      <View style={styles.headerWrapper}>
+        <Image style={styles.imgHeader} source={Header} />
+      </View>
+      <LinearGradient
+        colors={['#053DC7', '#05B8C7']}
+        style={styles.formWrapper}>
+        <Text style={styles.signup}>Masuk</Text>
+        <View style={styles.inputWrapper}>
+          <FormInput
+            placeholder="Email"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <FormInput placeholder="Kata Sandi" secureTextEntry={true} />
         </View>
-        <KeyboardAvoidingView behavior="position">
-          <LinearGradient
-            colors={['#053DC7', '#05B8C7']}
-            style={styles.formWrapper}>
-            <Text style={styles.signup}>Masuk</Text>
-            <View style={styles.inputWrapper}>
-              <FormInput
-                placeholder="Email"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-              />
-              <FormInput placeholder="Kata Sandi" secureTextEntry={true} />
-            </View>
-            <View style={{alignItems: 'center', marginBottom: 50}}>
-              <TouchableOpacity
-                style={styles.buttonDaftar}
-                onPress={() => navigation.navigate('MainApp')}>
-                <Text style={styles.buttonText}>Masuk</Text>
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity
-              style={styles.textWrapper}
-              onPress={() => navigation.navigate('Signup')}>
-              <Text style={styles.text}>Tidak punya akun? Buat akun baru</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-        </KeyboardAvoidingView>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={{alignItems: 'center', marginBottom: 50}}>
+          <TouchableOpacity
+            style={styles.buttonLogin}
+            onPress={() => navigation.navigate('MainApp')}>
+            <Text style={styles.buttonText}>Masuk</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity
+          style={styles.textWrapper}
+          onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.text}>Tidak punya akun? Buat akun baru</Text>
+        </TouchableOpacity>
+      </LinearGradient>
+    </View>
   );
 };
 
@@ -68,19 +57,23 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between',
     backgroundColor: '#ffffff',
   },
   headerWrapper: {
     marginTop: windowHeight * 0.092,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: windowHeight * 0.098,
+    // marginBottom: windowHeight * 0.098,
   },
   imgHeader: {
     width: 253,
     height: 198,
   },
   formWrapper: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
   },
@@ -98,9 +91,9 @@ const styles = StyleSheet.create({
   input: {
     color: '#ffffff',
   },
-  buttonDaftar: {
-    backgroundColor: '#ffffff',
-    width: 139,
+  buttonLogin: {
+    backgroundColor: '#05B8C7',
+    width: (windowWidth * 139) / 360,
     borderRadius: 40,
     alignItems: 'center',
     padding: 12,
@@ -108,6 +101,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 15,
+    color: '#ffffff',
   },
   textWrapper: {
     alignItems: 'center',

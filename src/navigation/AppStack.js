@@ -10,6 +10,7 @@ import SettingScreen from '../screens/SettingScreen';
 import SignupScreen from '../screens/SignupScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SplashScreen from '../screens/SplashScreen';
+import OnboardingScreen from '../screens/OnboardingScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,6 +46,11 @@ const AppStack = () => {
       <Stack.Screen
         name="Signup"
         component={SignupScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

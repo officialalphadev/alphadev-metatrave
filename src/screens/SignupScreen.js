@@ -5,11 +5,8 @@ import {
   Text,
   View,
   TouchableOpacity,
-  KeyboardAvoidingView,
-  ScrollView,
 } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -20,42 +17,38 @@ import {windowHeight} from '../utils/Dimentions';
 
 const SignupScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar
-        translucent={true}
-        backgroundColor={'transparent'}
-        barStyle={'dark-content'}
-      />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.headerWrapper}>
-          <Image style={styles.imgHeader} source={Header} />
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#ffffff" barStyle={'dark-content'} />
+      <View style={styles.headerWrapper}>
+        <Image style={styles.imgHeader} source={Header} />
+      </View>
+      <LinearGradient
+        colors={['#053DC7', '#05B8C7']}
+        style={styles.formWrapper}>
+        <Text style={styles.signup}>Daftar</Text>
+        <View style={styles.inputWrapper}>
+          <FormInput placeholder="Nama Pengguna" />
+          <FormInput
+            placeholder="Email"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <FormInput placeholder="Kata Sandi" secureTextEntry={true} />
+          <FormInput
+            placeholder="Konfirmasi Kata Sandi"
+            secureTextEntry={true}
+          />
         </View>
-        <KeyboardAvoidingView behavior="position">
-          <LinearGradient
-            colors={['#053DC7', '#05B8C7']}
-            style={styles.formWrapper}>
-            <Text style={styles.signup}>Daftar</Text>
-            <View style={styles.inputWrapper}>
-              <FormInput placeholder="Nama Pengguna" />
-              <FormInput
-                placeholder="Email"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-              />
-              <FormInput placeholder="Kata Sandi" secureTextEntry={true} />
-            </View>
-            <View style={{alignItems: 'center', marginBottom: 50}}>
-              <TouchableOpacity
-                style={styles.buttonDaftar}
-                onPress={() => navigation.navigate('MainApp')}>
-                <Text style={styles.buttonText}>Daftar</Text>
-              </TouchableOpacity>
-            </View>
-          </LinearGradient>
-        </KeyboardAvoidingView>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={{alignItems: 'center', marginBottom: 20}}>
+          <TouchableOpacity
+            style={styles.buttonDaftar}
+            onPress={() => navigation.navigate('MainApp')}>
+            <Text style={styles.buttonText}>Daftar</Text>
+          </TouchableOpacity>
+        </View>
+      </LinearGradient>
+    </View>
   );
 };
 
@@ -64,20 +57,23 @@ export default SignupScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between',
     backgroundColor: '#ffffff',
   },
   headerWrapper: {
     marginTop: windowHeight * 0.092,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: windowHeight * 0.098,
+    // marginBottom: windowHeight * 0.098,
   },
   imgHeader: {
     width: 258,
     height: 181,
   },
   formWrapper: {
-    backgroundColor: '#053DC7',
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
   },
@@ -96,7 +92,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
   buttonDaftar: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#05B8C7',
     width: 139,
     borderRadius: 40,
     alignItems: 'center',
@@ -105,5 +101,6 @@ const styles = StyleSheet.create({
   buttonText: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 15,
+    color: '#ffffff',
   },
 });

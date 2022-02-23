@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 25,
     paddingVertical: (windowHeight * 10) / 800,
-    marginBottom: (windowHeight * 25) / 800,
+    marginBottom: (windowHeight * 20) / 800,
   },
 });
