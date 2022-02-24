@@ -2,28 +2,14 @@ import {StyleSheet} from 'react-native';
 import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import HomeScreen from '../screens/HomeScreen';
-import VirtualTourScreen from '../screens/VirtualTourScreen';
-import SettingScreen from '../screens/SettingScreen';
 import SignupScreen from '../screens/SignupScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SplashScreen from '../screens/SplashScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
+import MainApp from '../components/BottomTabBar';
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
-
-const MainApp = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="VirtualTour" component={VirtualTourScreen} />
-      <Tab.Screen name="Setting" component={SettingScreen} />
-    </Tab.Navigator>
-  );
-};
 
 const AppStack = () => {
   return (
