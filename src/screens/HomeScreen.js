@@ -1,10 +1,12 @@
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+
+import {FocusAwareStatusBar} from '../components';
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <StatusBar
+      <FocusAwareStatusBar
         translucent={true}
         backgroundColor="transparent"
         barStyle="light-content"

@@ -1,6 +1,5 @@
 import {
   Image,
-  Linking,
   StatusBar,
   StyleSheet,
   Text,
@@ -11,9 +10,7 @@ import React from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import Header from '../assets/img/header-signup.png';
-import Line from '../assets/svg/line.svg';
-import Logo from '../assets/svg/logo-white.svg';
+import {LogoWhite, Line, ImageHeaderSignup} from '../assets';
 
 import {windowHeight} from '../utils/Dimentions';
 
@@ -22,11 +19,11 @@ const OnboardingScreen = ({navigation}) => {
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
       <View style={styles.headerWrapper}>
-        <Image style={styles.imgHeader} source={Header} />
+        <Image style={styles.imgHeader} source={ImageHeaderSignup} />
       </View>
       <View>
         <LinearGradient colors={['#053DC7', '#05B8C7']} style={styles.wrapper}>
-          <Logo width={80} height={80} />
+          <LogoWhite width={80} height={80} />
           <TouchableOpacity
             style={styles.buttonLogin}
             onPress={() =>

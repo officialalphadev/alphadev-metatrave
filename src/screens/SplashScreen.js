@@ -1,12 +1,14 @@
 import {StatusBar, StyleSheet, View} from 'react-native';
 import React, {useEffect} from 'react';
 
-import Logo from '../assets/svg/logo.svg';
+import {Logo} from '../assets';
 
 const SplashScreen = ({navigation}) => {
+  const User = true;
+
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('Onboarding');
+      navigation.replace(User ? 'MainApp' : 'Onboarding');
     }, 3000);
   }, [navigation]);
 

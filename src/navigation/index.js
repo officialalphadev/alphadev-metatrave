@@ -1,8 +1,8 @@
 import React from 'react';
-import Route from './Route';
+import Routes from './Routes';
 
 const Navigation = () => {
-  return <Route />;
+  return <Routes />;
 };
 
 export default Navigation;

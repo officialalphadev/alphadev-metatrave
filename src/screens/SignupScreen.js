@@ -6,44 +6,65 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import Header from '../assets/img/header-signup.png';
-import FormInput from '../components/FormInput';
+import {ImageHeaderSignup} from '../assets';
+import {FormInput} from '../components';
 
 import {windowHeight} from '../utils/Dimentions';
 
-const SignupScreen = ({navigation}) => {
+const SignupScreen = () => {
+  const [name, setName] = useState();
+  const [number, setNumber] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+
+  const CheckPassword = () => {
+    if (confirmPassword === password) {
+      console.log(name, number, password);
+    } else {
+      alert('Password tidak cocok!');
+    }
+
+    if (!name && !number && !password) {
+      alert('Error!');
+    }
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#ffffff" barStyle={'dark-content'} />
       <View style={styles.headerWrapper}>
-        <Image style={styles.imgHeader} source={Header} />
+        <Image style={styles.imgHeader} source={ImageHeaderSignup} />
       </View>
       <LinearGradient
         colors={['#053DC7', '#05B8C7']}
         style={styles.formWrapper}>
         <Text style={styles.signup}>Daftar</Text>
         <View style={styles.inputWrapper}>
-          <FormInput placeholder="Nama Pengguna" />
           <FormInput
-            placeholder="Email"
-            keyboardType="email-address"
-            autoCapitalize="none"
-            autoCorrect={false}
+            placeholder="Nama Pengguna"
+            onChangeText={inputName => setName(inputName)}
           />
-          <FormInput placeholder="Kata Sandi" secureTextEntry={true} />
+          <FormInput
+            placeholder="Nomor Handphone"
+            onChangeText={inputNumber => setNumber(inputNumber)}
+          />
+          <FormInput
+            placeholder="Kata Sandi"
+            secureTextEntry={true}
+            onChangeText={inputPassword => setPassword(inputPassword)}
+          />
           <FormInput
             placeholder="Konfirmasi Kata Sandi"
             secureTextEntry={true}
+            onChangeText={inputConfirm => setConfirmPassword(inputConfirm)}
           />
         </View>
         <View style={{alignItems: 'center', marginBottom: 20}}>
-          <TouchableOpacity
-            style={styles.buttonDaftar}
-            onPress={() => navigation.navigate('MainApp')}>
+          <TouchableOpacity style={styles.buttonDaftar} onPress={CheckPassword}>
             <Text style={styles.buttonText}>Daftar</Text>
           </TouchableOpacity>
         </View>

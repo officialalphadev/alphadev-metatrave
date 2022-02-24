@@ -6,21 +6,24 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import Header from '../assets/img/header-login.png';
-import FormInput from '../components/FormInput';
+import {ImageHeaderLogin} from '../assets';
+import {FormInput} from '../components';
 
 import {windowHeight, windowWidth} from '../utils/Dimentions';
 
 const LoginScreen = ({navigation}) => {
+  const [number, setNumber] = useState();
+  const [password, setPassword] = useState();
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#ffffff" barStyle={'dark-content'} />
       <View style={styles.headerWrapper}>
-        <Image style={styles.imgHeader} source={Header} />
+        <Image style={styles.imgHeader} source={ImageHeaderLogin} />
       </View>
       <LinearGradient
         colors={['#053DC7', '#05B8C7']}
@@ -28,17 +31,19 @@ const LoginScreen = ({navigation}) => {
         <Text style={styles.signup}>Masuk</Text>
         <View style={styles.inputWrapper}>
           <FormInput
-            placeholder="Email"
-            keyboardType="email-address"
-            autoCapitalize="none"
-            autoCorrect={false}
+            placeholder="No Hp"
+            onChangeText={inputNumber => setNumber(inputNumber)}
           />
-          <FormInput placeholder="Kata Sandi" secureTextEntry={true} />
+          <FormInput
+            placeholder="Kata Sandi"
+            secureTextEntry={true}
+            onChangeText={inputPassword => setPassword(inputPassword)}
+          />
         </View>
         <View style={{alignItems: 'center', marginBottom: 50}}>
           <TouchableOpacity
             style={styles.buttonLogin}
-            onPress={() => navigation.navigate('MainApp')}>
+            onPress={() => console.log(number, password)}>
             <Text style={styles.buttonText}>Masuk</Text>
           </TouchableOpacity>
         </View>
