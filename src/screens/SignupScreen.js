@@ -11,7 +11,7 @@ import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {ImageHeaderSignup} from '../assets';
-import {FormInput} from '../components';
+import FormInput from '../components/FormInput';
 
 import {windowHeight} from '../utils/Dimentions';
 

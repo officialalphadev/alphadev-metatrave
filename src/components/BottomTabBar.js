@@ -13,7 +13,8 @@ import {
   IconVrActive,
 } from '../assets';
 import {HomeScreen, SettingScreen, VirtualTourScreen} from '../screens';
-import {CustomHeaderHome, CustomTabBarButton} from '../components';
+import CustomHeaderHome from './CustomHeaderHome';
+import CustomTabBarButton from './CustomTabBarButton';
 
 const Tab = createBottomTabNavigator();
 

@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-import {FocusAwareStatusBar} from '../components';
+import FocusAwareStatusBar from '../components/FocusAwareStatusBar';
 
 const HomeScreen = () => {
   return (
