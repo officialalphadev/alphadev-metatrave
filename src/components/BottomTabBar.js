@@ -1,4 +1,10 @@
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -9,10 +15,13 @@ import IconHomeActive from '../assets/svg/icon-home-active.svg';
 import IconSetting from '../assets/svg/icon-setting.svg';
 import IconSettingActive from '../assets/svg/icon-setting-active.svg';
 import IconVr from '../assets/svg/icon-vr.svg';
+import IconSearch from '../assets/svg/icon-search.svg';
 
 import HomeScreen from '../screens/HomeScreen';
 import VirtualTourScreen from '../screens/VirtualTourScreen';
 import SettingScreen from '../screens/SettingScreen';
+
+import {windowWidth} from '../utils/Dimentions';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,6 +40,32 @@ const CustomTabBarButton = ({children, onPress}) => {
         {children}
       </View>
     </TouchableOpacity>
+  );
+};
+
+const HeaderSearch = () => {
+  return (
+    <View
+      style={{
+        backgroundColor: '#ffffff',
+        borderRadius: 30,
+        marginLeft: 16,
+        paddingHorizontal: 15,
+        width: (windowWidth * 260) / 360,
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}>
+      <IconSearch width={32} height={32} />
+      <TextInput
+        style={{
+          paddingVertical: 10,
+          fontFamily: 'Montserrat-SemiBold',
+          fontSize: 15,
+          width: '100%',
+        }}
+        placeholder="Cari wisata"
+      />
+    </View>
   );
 };
 
@@ -53,6 +88,12 @@ const MainApp = () => {
             ) : (
               <IconHome width={32} height={32} />
             ),
+          headerLeft: () => <HeaderSearch />,
+          title: '',
+          headerStyle: {
+            backgroundColor: '#053DC7',
+            height: 130,
+          },
         }}
       />
       <Tab.Screen
