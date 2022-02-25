@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {SplashScreen, VirtualTourScreen} from '../screens';
 import {MainApp} from '../components';
+import DetailWisataScreen from '../screens/DetailWisataScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const AppStack = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen name="VirtualTour" component={VirtualTourScreen} />
+      <Stack.Screen name="DetailWisata" component={DetailWisataScreen} />
       <Stack.Screen
         name="MainApp"
         component={MainApp}

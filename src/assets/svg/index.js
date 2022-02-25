@@ -5,6 +5,7 @@ import IconSetting from './icon-setting';
 import IconVrActive from './icon-vr-active';
 import IconVr from './icon-vr';
 import IconSearch from './icon-search';
+import IconCart from './icon-cart';
 
 import Line from './line.svg';
 import LogoWhite from './logo-white';
@@ -18,6 +19,7 @@ export {
   IconVrActive,
   IconVr,
   IconSearch,
+  IconCart,
   Line,
   LogoWhite,
   Logo,

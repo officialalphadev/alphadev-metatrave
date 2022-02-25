@@ -3,6 +3,7 @@ import CustomHeaderHome from './CustomHeaderHome';
 import CustomTabBarButton from './CustomTabBarButton';
 import FocusAwareStatusBar from './FocusAwareStatusBar';
 import FormInput from './FormInput';
+import CarouselOnboarding from './CarouselOnboarding';
 
 export {
   MainApp,
@@ -10,4 +11,5 @@ export {
   CustomTabBarButton,
   FocusAwareStatusBar,
   FormInput,
+  CarouselOnboarding,
 };

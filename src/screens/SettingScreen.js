@@ -1,7 +1,10 @@
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
+import React, {useContext} from 'react';
+
+import {AuthContext} from '../navigation/AuthProvider';
 
 const SettingScreen = () => {
+  const {logout, user} = useContext(AuthContext);
   return (
     <View style={styles.container}>
       <StatusBar
@@ -9,7 +12,8 @@ const SettingScreen = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <Text>SettingScreen</Text>
+      <Text>{user ? user : 'TEST'}</Text>
+      <Button title="Logout" onPress={() => logout()} />
     </View>
   );
 };

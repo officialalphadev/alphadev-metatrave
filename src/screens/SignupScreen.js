@@ -6,30 +6,33 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {ImageHeaderSignup} from '../assets';
 import FormInput from '../components/FormInput';
 
 import {windowHeight} from '../utils/Dimentions';
+import {AuthContext} from '../navigation/AuthProvider';
 
-const SignupScreen = () => {
+const SignupScreen = ({navigation}) => {
   const [name, setName] = useState();
   const [number, setNumber] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  const CheckPassword = () => {
-    if (confirmPassword === password) {
-      console.log(name, number, password);
-    } else {
-      alert('Password tidak cocok!');
-    }
+  const {signup} = useContext(AuthContext);
 
-    if (!name && !number && !password) {
+  const CheckPassword = async () => {
+    if (confirmPassword === password && name && number) {
+      signup(name, number, password);
+      navigation.replace('Login');
+    } else if (!name || !number || !password) {
       alert('Error!');
+    } else if (confirmPassword !== password) {
+      alert('Password tidak cocok!');
     }
   };
 

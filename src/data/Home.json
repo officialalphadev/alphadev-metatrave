@@ -1,0 +1,252 @@
+{
+  "categories": [
+    {
+      "_id": "asd1293uasdads1",
+      "name": "Wisata Disekitar Anda",
+      "items": [
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        }
+      ]
+    },
+    {
+      "_id": "asd1293uasdads1",
+      "name": "Wisata Alam",
+      "items": [
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        }
+      ]
+    },
+    {
+      "_id": "asd1293uasdads1",
+      "name": "Wisata Edukasi",
+      "items": [
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        }
+      ]
+    },
+    {
+      "_id": "asd1293uasdads1",
+      "name": "Wisata Pantai",
+      "items": [
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "require('../assets/img/img-1.png')",
+          "city": "Seoul",
+          "price": "50.000"
+        }
+      ]
+    }
+  ]
+}

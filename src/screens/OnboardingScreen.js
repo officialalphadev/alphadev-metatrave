@@ -1,34 +1,39 @@
 import {
-  Image,
   StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {LogoWhite, Line, ImageHeaderSignup} from '../assets';
+import {LogoWhite, Line} from '../assets';
+import CarouselOnboarding from '../components/CarouselOnboarding';
+import {AuthContext} from '../navigation/AuthProvider';
 
 import {windowHeight} from '../utils/Dimentions';
 
 const OnboardingScreen = ({navigation}) => {
+  const {setIsFirstLaunch} = useContext(AuthContext);
+
+  const Masuk = async () => {
+    await AsyncStorage.setItem('alreadyLaunch', 'alreadylaunch');
+    navigation.replace('Login');
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
       <View style={styles.headerWrapper}>
-        <Image style={styles.imgHeader} source={ImageHeaderSignup} />
+        <CarouselOnboarding />
       </View>
-      <View>
+      <View style={{position: 'absolute', bottom: 0, width: '100%'}}>
         <LinearGradient colors={['#053DC7', '#05B8C7']} style={styles.wrapper}>
           <LogoWhite width={80} height={80} />
-          <TouchableOpacity
-            style={styles.buttonLogin}
-            onPress={() =>
-              navigation.navigate('Login', {transition: 'vertical'})
-            }>
+          <TouchableOpacity style={styles.buttonLogin} onPress={Masuk}>
             <Text style={styles.textLogin}>Masuk</Text>
           </TouchableOpacity>
           <View style={styles.atau}>
@@ -59,20 +64,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headerWrapper: {
-    marginTop: (windowHeight * 176) / 800,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: (windowHeight * 150) / 800,
     marginBottom: windowHeight * 0.098,
-  },
-  imgHeader: {
-    width: 258,
-    height: 181,
   },
   wrapper: {
     alignItems: 'center',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    paddingBottom: (windowHeight * 120) / 800,
+    paddingBottom: (windowHeight * 40) / 800,
     paddingHorizontal: 16,
   },
   buttonLogin: {

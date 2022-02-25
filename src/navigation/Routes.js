@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 
 import AuthStack from './AuthStack';
 import AppStack from './AppStack';
+import {AuthContext} from './AuthProvider';
 
 const Route = () => {
-  const User = true;
+  const {user} = useContext(AuthContext);
+
   return (
     <NavigationContainer>
-      {User ? <AppStack /> : <AuthStack />}
+      {user !== 'logout' ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };

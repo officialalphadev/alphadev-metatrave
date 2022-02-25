@@ -1,14 +1,16 @@
-import {StyleSheet, View, TextInput} from 'react-native';
+import {StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import {IconSearch} from '../assets';
+import {IconCart, IconSearch} from '../assets';
 
 import {windowWidth} from '../utils/Dimentions';
 
 const CustomHeaderHome = () => {
+  const Notification = true;
+
   return (
     <LinearGradient
       start={{x: 1, y: 1}}
@@ -20,6 +22,10 @@ const CustomHeaderHome = () => {
           <IconSearch width={32} height={32} />
           <TextInput style={styles.search} placeholder="Cari wisata" />
         </View>
+        <TouchableOpacity>
+          {Notification ? <View style={styles.dot}></View> : null}
+          <IconCart width={32} height={32} />
+        </TouchableOpacity>
       </SafeAreaView>
     </LinearGradient>
   );
@@ -33,12 +39,14 @@ const styles = StyleSheet.create({
   },
   headerWrapper: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
   },
   searchWrapper: {
     backgroundColor: '#ffffff',
     borderRadius: 30,
-    marginLeft: 16,
     paddingHorizontal: 15,
     width: (windowWidth * 260) / 360,
     flexDirection: 'row',
@@ -46,8 +54,17 @@ const styles = StyleSheet.create({
   },
   search: {
     paddingVertical: 10,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: 'Montserrat-Regular',
     fontSize: 15,
     width: '100%',
+  },
+  dot: {
+    position: 'absolute',
+    width: 8,
+    height: 8,
+    backgroundColor: '#FF6B6B',
+    borderRadius: 50,
+    zIndex: 1,
+    right: 0,
   },
 });

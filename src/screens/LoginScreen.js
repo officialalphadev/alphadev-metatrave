@@ -6,18 +6,21 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
 
 import {ImageHeaderLogin} from '../assets';
 import FormInput from '../components/FormInput';
+import {AuthContext} from '../navigation/AuthProvider';
 
 import {windowHeight, windowWidth} from '../utils/Dimentions';
 
 const LoginScreen = ({navigation}) => {
   const [number, setNumber] = useState();
   const [password, setPassword] = useState();
+
+  const {login} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -31,7 +34,7 @@ const LoginScreen = ({navigation}) => {
         <Text style={styles.signup}>Masuk</Text>
         <View style={styles.inputWrapper}>
           <FormInput
-            placeholder="No Hp"
+            placeholder="Nomor Handphone"
             onChangeText={inputNumber => setNumber(inputNumber)}
           />
           <FormInput
@@ -43,7 +46,7 @@ const LoginScreen = ({navigation}) => {
         <View style={{alignItems: 'center', marginBottom: 50}}>
           <TouchableOpacity
             style={styles.buttonLogin}
-            onPress={() => console.log(number, password)}>
+            onPress={() => login(number, password)}>
             <Text style={styles.buttonText}>Masuk</Text>
           </TouchableOpacity>
         </View>

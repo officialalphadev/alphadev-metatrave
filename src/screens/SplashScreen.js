@@ -1,14 +1,21 @@
 import {StatusBar, StyleSheet, View} from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import {Logo} from '../assets';
+import {AuthContext} from '../navigation/AuthProvider';
 
 const SplashScreen = ({navigation}) => {
-  const User = true;
+  const {user, isFirstLaunch} = useContext(AuthContext);
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace(User ? 'MainApp' : 'Onboarding');
+      navigation.replace(
+        user !== 'logout'
+          ? 'MainApp'
+          : isFirstLaunch !== 'dontLaunch'
+          ? 'Onboarding'
+          : 'Login',
+      );
     }, 3000);
   }, [navigation]);
 
