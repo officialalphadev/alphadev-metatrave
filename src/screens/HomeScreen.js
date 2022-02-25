@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => {
                   return (
                     <CardCategoryItem
                       key={`category-${index1}-item-${index2}`}
-                      source={Img}
+                      image={item.imageUrl}
                       name={item.name}
                       city={item.city}
                       price={item.price}

@@ -1,7 +1,7 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 
-const CardCategoryItem = ({onPress, name, city, price, ...rest}) => {
+const CardCategoryItem = ({image, onPress, name, city, price}) => {
   return (
     <TouchableOpacity
       style={styles.cardCategoryItemContainer}
@@ -13,8 +13,9 @@ const CardCategoryItem = ({onPress, name, city, price, ...rest}) => {
           backgroundColor: '#C4C4C4',
           borderRadius: 5,
           marginBottom: 10,
+          overflow: 'hidden',
         }}>
-        <Image style={{width: 100, height: 90}} {...rest} />
+        <Image style={{width: 100, height: 90}} source={{uri: image}} />
       </View>
       <Text style={styles.text}>{name}</Text>
       <Text style={styles.text}>{city}</Text>

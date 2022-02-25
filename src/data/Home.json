@@ -7,56 +7,56 @@
         {
           "_id": "asd1293uasdads1",
           "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643879397174-4f10ac503566?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDYwNw&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1645426580785-235c066fdafc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDY1NA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 45.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643828924568-3ac99b95758b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDY5NQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 60.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643916861337-1e13c6f09b72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc0Ng&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://source.unsplash.com/random",
           "city": "Seoul",
           "price": "Rp 50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644624814431-0aa7a073e329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc1OA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 45.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1645008558160-c7e4affd16d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc2OQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 60.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644183920901-2ab7af965df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc4MA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "50.000"
         }
@@ -69,118 +69,56 @@
         {
           "_id": "asd1293uasdads1",
           "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1574705418810-450dcc98038c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc5MQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1635873098001-9974b70faf62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgwMQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 45.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1645365264846-c5e02c9cad90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgxMQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 60.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1645651758223-32f82d99c43d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgxOQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643048563402-668bb8ed2307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgzMQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644241950263-f8ec26a9f25b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDg0Mg&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 45.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644596102282-a4df5383807d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDg1Mw&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 60.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "50.000"
-        }
-      ]
-    },
-    {
-      "_id": "asd1293uasdads1",
-      "name": "Wisata Edukasi",
-      "items": [
-        {
-          "_id": "asd1293uasdads1",
-          "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "Rp 50.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "Rp 45.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "Rp 60.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "50.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "Rp 50.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "Rp 45.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
-          "city": "Seoul",
-          "price": "Rp 60.000"
-        },
-        {
-          "_id": "asd1293uasdads1",
-          "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644994635354-5b9ee506816c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDg2NA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "50.000"
         }
@@ -188,61 +126,123 @@
     },
     {
       "_id": "asd1293uasdads1",
-      "name": "Wisata Pantai",
+      "name": "Wisata Disekitar Anda",
       "items": [
         {
           "_id": "asd1293uasdads1",
           "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643879397174-4f10ac503566?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDYwNw&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1645426580785-235c066fdafc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDY1NA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 45.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643828924568-3ac99b95758b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDY5NQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 60.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1643916861337-1e13c6f09b72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc0Ng&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "PSW Antasari",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://source.unsplash.com/random",
           "city": "Seoul",
           "price": "Rp 50.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Kuretakeso",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644624814431-0aa7a073e329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc1OA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 45.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Arya Duta",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1645008558160-c7e4affd16d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc2OQ&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "Rp 60.000"
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Grand Dhika",
-          "imageUrl": "require('../assets/img/img-1.png')",
+          "imageUrl": "https://images.unsplash.com/photo-1644183920901-2ab7af965df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc4MA&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "50.000"
+        }
+      ]
+    },
+    {
+      "_id": "asd1293uasdads1",
+      "name": "Wisata Alam",
+      "items": [
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "https://images.unsplash.com/photo-1574705418810-450dcc98038c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDc5MQ&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "https://images.unsplash.com/photo-1635873098001-9974b70faf62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgwMQ&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "https://images.unsplash.com/photo-1645365264846-c5e02c9cad90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgxMQ&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "https://images.unsplash.com/photo-1645651758223-32f82d99c43d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgxOQ&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "PSW Antasari",
+          "imageUrl": "https://images.unsplash.com/photo-1643048563402-668bb8ed2307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDgzMQ&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "Rp 50.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Kuretakeso",
+          "imageUrl": "https://images.unsplash.com/photo-1644241950263-f8ec26a9f25b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDg0Mg&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "Rp 45.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Arya Duta",
+          "imageUrl": "https://images.unsplash.com/photo-1644596102282-a4df5383807d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDg1Mw&ixlib=rb-1.2.1&q=80&w=1080",
+          "city": "Seoul",
+          "price": "Rp 60.000"
+        },
+        {
+          "_id": "asd1293uasdads1",
+          "name": "Grand Dhika",
+          "imageUrl": "https://images.unsplash.com/photo-1644994635354-5b9ee506816c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NTgwNDg2NA&ixlib=rb-1.2.1&q=80&w=1080",
           "city": "Seoul",
           "price": "50.000"
         }
