@@ -5,25 +5,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useContext} from 'react';
+import React from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {LogoWhite, Line} from '../assets';
 import CarouselOnboarding from '../components/CarouselOnboarding';
-import {AuthContext} from '../navigation/AuthProvider';
 
 import {windowHeight} from '../utils/Dimentions';
 
 const OnboardingScreen = ({navigation}) => {
-  const {setIsFirstLaunch} = useContext(AuthContext);
-
-  const Masuk = async () => {
-    await AsyncStorage.setItem('alreadyLaunch', 'alreadylaunch');
-    navigation.replace('Login');
-  };
-
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
@@ -33,7 +24,9 @@ const OnboardingScreen = ({navigation}) => {
       <View style={{position: 'absolute', bottom: 0, width: '100%'}}>
         <LinearGradient colors={['#053DC7', '#05B8C7']} style={styles.wrapper}>
           <LogoWhite width={80} height={80} />
-          <TouchableOpacity style={styles.buttonLogin} onPress={Masuk}>
+          <TouchableOpacity
+            style={styles.buttonLogin}
+            onPress={() => navigation.replace('Login')}>
             <Text style={styles.textLogin}>Masuk</Text>
           </TouchableOpacity>
           <View style={styles.atau}>
@@ -43,7 +36,7 @@ const OnboardingScreen = ({navigation}) => {
           </View>
           <TouchableOpacity
             style={styles.buttonSignup}
-            onPress={() => navigation.navigate('Signup')}>
+            onPress={() => navigation.replace('Signup')}>
             <Text style={styles.textSignup}>Daftar</Text>
           </TouchableOpacity>
           <Text style={styles.text}>

@@ -1,15 +1,17 @@
-import {ScrollView, StyleSheet, View} from 'react-native';
-import React from 'react';
+import {RefreshControl, ScrollView, StyleSheet, View} from 'react-native';
+import React, {useContext} from 'react';
 
 import FocusAwareStatusBar from '../components/FocusAwareStatusBar';
 import CardCategory from '../components/CardCategory';
 import CardCategoryItem from '../components/CardCategoryItem';
 
-import Img from '../assets/img/img-1.png';
-
 import DataHome from '../data/Home.json';
+import {AuthContext} from '../navigation/AuthProvider';
 
 const HomeScreen = ({navigation}) => {
+  const {dataLogin} = useContext(AuthContext);
+  // const [isLoading, setLoading] = useState(true);
+
   const data = DataHome.categories;
 
   return (
@@ -19,7 +21,15 @@ const HomeScreen = ({navigation}) => {
         backgroundColor="transparent"
         barStyle="light-content"
       />
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.wrapper}>
+      <ScrollView
+        refreshControl={
+          <RefreshControl
+            refreshing={false}
+            // onRefresh={}
+          />
+        }
+        showsVerticalScrollIndicator={false}
+        style={styles.wrapper}>
         {data.map((category, index1) => {
           return (
             <CardCategory key={`category-${index1}`} title={category.name}>
@@ -41,7 +51,7 @@ const HomeScreen = ({navigation}) => {
             </CardCategory>
           );
         })}
-        <View style={{height: 30}} />
+        <View style={{height: 120}} />
       </ScrollView>
     </View>
   );

@@ -1,10 +1,27 @@
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import {AuthContext} from '../navigation/AuthProvider';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SettingScreen = () => {
-  const {logout, user} = useContext(AuthContext);
+  const {userId, setUserId} = useContext(AuthContext);
+
+  const DisplayUserId = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem('userId');
+      jsonValue != null ? JSON.parse(jsonValue) : null;
+      setUserId(jsonValue.replace('"', '').replace('"', ''));
+    } catch (e) {
+      // error reading value
+    }
+  };
+
+  useEffect(() => {
+    DisplayUserId();
+  }, []);
+
+  const {logout} = useContext(AuthContext);
   return (
     <View style={styles.container}>
       <StatusBar
@@ -12,7 +29,7 @@ const SettingScreen = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <Text>{user ? user : 'TEST'}</Text>
+      <Text style={{marginBottom: 20}}>User Id : {userId}</Text>
       <Button title="Logout" onPress={() => logout()} />
     </View>
   );

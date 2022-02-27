@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
   SplashScreen,
@@ -13,10 +14,30 @@ import {AuthContext} from './AuthProvider';
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
-  const {setIsFirstLaunch} = useContext(AuthContext);
+  const {isFirstLaunch, setIsFirstLaunch} = useContext(AuthContext);
+  let routeName;
+
+  useEffect(() => {
+    AsyncStorage.getItem('alreadyLaunch').then(value => {
+      if (value == null) {
+        AsyncStorage.setItem('alreadyLaunch', 'true');
+        setIsFirstLaunch(true);
+      } else {
+        setIsFirstLaunch(false);
+      }
+    });
+  }, []);
+
+  if (isFirstLaunch === null) {
+    return null;
+  } else if (isFirstLaunch === true) {
+    routeName = 'Onboarding';
+  } else {
+    routeName = 'Splash';
+  }
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={routeName}>
       <Stack.Screen
         name="Splash"
         component={SplashScreen}

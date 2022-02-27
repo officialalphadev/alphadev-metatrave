@@ -11,7 +11,7 @@ const DetailWisataScreen = ({route}) => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <Text>DetailWisataScreen</Text>
+      <Text>{JSON.stringify(data)}</Text>
     </View>
   );
 };

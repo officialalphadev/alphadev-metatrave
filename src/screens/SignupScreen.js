@@ -9,7 +9,6 @@ import {
 import React, {useContext, useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {ImageHeaderSignup} from '../assets';
 import FormInput from '../components/FormInput';

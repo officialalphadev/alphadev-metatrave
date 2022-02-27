@@ -5,17 +5,11 @@ import {Logo} from '../assets';
 import {AuthContext} from '../navigation/AuthProvider';
 
 const SplashScreen = ({navigation}) => {
-  const {user, isFirstLaunch} = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace(
-        user !== 'logout'
-          ? 'MainApp'
-          : isFirstLaunch !== 'dontLaunch'
-          ? 'Onboarding'
-          : 'Login',
-      );
+      navigation.replace(user ? 'MainApp' : 'Login');
     }, 3000);
   }, [navigation]);
 

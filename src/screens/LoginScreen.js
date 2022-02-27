@@ -46,7 +46,11 @@ const LoginScreen = ({navigation}) => {
         <View style={{alignItems: 'center', marginBottom: 50}}>
           <TouchableOpacity
             style={styles.buttonLogin}
-            onPress={() => login(number, password)}>
+            onPress={() =>
+              number && password
+                ? login(number, password)
+                : alert('Masukan number dan password!')
+            }>
             <Text style={styles.buttonText}>Masuk</Text>
           </TouchableOpacity>
         </View>

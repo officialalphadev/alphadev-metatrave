@@ -2,47 +2,74 @@ import React, {createContext, useState} from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import axios from 'axios';
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-  // const tmpUserId = AsyncStorage.getItem('@db_user');
-  // const userId = JSON.stringify(tmpUserId);
-  const [user, setUser] = useState('logout');
+  const [user, setUser] = useState(false);
+  const [userId, setUserId] = useState(false);
+  const [isFirstLaunch, setIsFirstLaunch] = useState(null);
+
+  const SaveSessionLogin = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('userId', jsonValue);
+    } catch (e) {
+      // saving error
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
         user,
         setUser,
+        userId,
+        setUserId,
+        isFirstLaunch,
+        setIsFirstLaunch,
         login: async (number, password) => {
           try {
-            await AsyncStorage.setItem('@db_user', JSON.stringify(number));
-            await AsyncStorage.setItem(
-              '@db_password',
-              JSON.stringify(password),
-            );
-            setUser(number);
+            const res = await axios
+              .post('https://alphadev-server.herokuapp.com/user/api/signin', {
+                noHp: number,
+                password: password,
+              })
+              .then(response => {
+                console.log('response', response.data.User);
+                SaveSessionLogin(response.data.User.id);
+                setUser(true);
+              });
           } catch (error) {
-            console.log(error);
+            // console.log(error);
+            console.log(error.message);
+            console.log('gagal login');
             alert('gagal login');
           }
         },
         signup: async (name, number, password) => {
           try {
-            await AsyncStorage.setItem('@db_name', JSON.stringify(name));
-            await AsyncStorage.setItem('@db_user', JSON.stringify(number));
-            await AsyncStorage.setItem(
-              '@db_password',
-              JSON.stringify(password),
-            );
+            const res = await axios
+              .post('https://alphadev-server.herokuapp.com/user/api/signup', {
+                username: name,
+                email: 'test@gmail.com',
+                noHp: number,
+                password: password,
+              })
+              .then(function (response) {
+                // console.log('signup response : ', response);
+                // console.log('signup success : ', response.data.user);
+              });
           } catch (error) {
-            console.log(error);
+            console.log('signup erorr :', error.message);
             alert('gagal Signup');
           }
         },
         logout: async () => {
           try {
-            await AsyncStorage.setItem('@db_user', JSON.stringify('logout'));
-            setUser('logout');
+            await AsyncStorage.removeItem('userId');
+            setUser(false);
           } catch (error) {
             console.log(error);
             alert('gagal logout');

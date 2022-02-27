@@ -82,5 +82,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 15,
     backgroundColor: '#ffffff',
     height: 60,
+    position: 'absolute',
   },
 });
