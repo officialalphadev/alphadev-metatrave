@@ -15,6 +15,7 @@ import FormInput from '../components/FormInput';
 
 import {windowHeight} from '../utils/Dimentions';
 import {AuthContext} from '../navigation/AuthProvider';
+import LoadingAnimation from '../components/LoadingAnimation';
 
 const SignupScreen = ({navigation}) => {
   const [name, setName] = useState();
@@ -22,16 +23,21 @@ const SignupScreen = ({navigation}) => {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  const {signup} = useContext(AuthContext);
+  const {signup, isLoading} = useContext(AuthContext);
 
   const CheckPassword = async () => {
-    if (confirmPassword === password && name && number) {
-      signup(name, number, password);
+    try {
+      if (confirmPassword === password && name && number) {
+        signup(name, number, password);
+      } else if (!name || !number || !password) {
+        alert('Error!');
+      } else if (confirmPassword !== password) {
+        alert('Password tidak cocok!');
+      }
+    } catch (error) {
+      console.log('check password error : ', error.message);
+    } finally {
       navigation.replace('Login');
-    } else if (!name || !number || !password) {
-      alert('Error!');
-    } else if (confirmPassword !== password) {
-      alert('Password tidak cocok!');
     }
   };
 
@@ -71,6 +77,7 @@ const SignupScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </LinearGradient>
+      {isLoading ? <LoadingAnimation /> : null}
     </View>
   );
 };

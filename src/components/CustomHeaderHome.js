@@ -8,7 +8,7 @@ import {IconCart, IconSearch} from '../assets';
 
 import {windowWidth} from '../utils/Dimentions';
 
-const CustomHeaderHome = () => {
+const CustomHeaderHome = ({onPress}) => {
   const Notification = true;
 
   return (
@@ -22,7 +22,7 @@ const CustomHeaderHome = () => {
           <IconSearch width={32} height={32} />
           <TextInput style={styles.search} placeholder="Cari wisata" />
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
           {Notification ? <View style={styles.dot}></View> : null}
           <IconCart width={32} height={32} />
         </TouchableOpacity>

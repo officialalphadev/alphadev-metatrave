@@ -37,7 +37,9 @@ const MainApp = ({navigation}) => {
             ) : (
               <IconHome width={32} height={32} />
             ),
-          header: () => <CustomHeaderHome />,
+          header: () => (
+            <CustomHeaderHome onPress={() => navigation.navigate('Cart')} />
+          ),
           title: null,
         }}
       />

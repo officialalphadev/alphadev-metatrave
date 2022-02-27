@@ -13,6 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {ImageHeaderLogin} from '../assets';
 import FormInput from '../components/FormInput';
 import {AuthContext} from '../navigation/AuthProvider';
+import LoadingAnimation from '../components/LoadingAnimation';
 
 import {windowHeight, windowWidth} from '../utils/Dimentions';
 
@@ -20,7 +21,7 @@ const LoginScreen = ({navigation}) => {
   const [number, setNumber] = useState();
   const [password, setPassword] = useState();
 
-  const {login} = useContext(AuthContext);
+  const {login, isLoading} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -60,6 +61,7 @@ const LoginScreen = ({navigation}) => {
           <Text style={styles.text}>Tidak punya akun? Buat akun baru</Text>
         </TouchableOpacity>
       </LinearGradient>
+      {isLoading ? <LoadingAnimation /> : null}
     </View>
   );
 };

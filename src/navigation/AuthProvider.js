@@ -10,6 +10,7 @@ export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(false);
   const [userId, setUserId] = useState(false);
   const [isFirstLaunch, setIsFirstLaunch] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const SaveSessionLogin = async value => {
     try {
@@ -27,10 +28,13 @@ export const AuthProvider = ({children}) => {
         setUser,
         userId,
         setUserId,
+        isLoading,
+        setIsLoading,
         isFirstLaunch,
         setIsFirstLaunch,
         login: async (number, password) => {
           try {
+            setIsLoading(true);
             const res = await axios
               .post('https://alphadev-server.herokuapp.com/user/api/signin', {
                 noHp: number,
@@ -46,10 +50,13 @@ export const AuthProvider = ({children}) => {
             console.log(error.message);
             console.log('gagal login');
             alert('gagal login');
+          } finally {
+            setIsLoading(false);
           }
         },
         signup: async (name, number, password) => {
           try {
+            setIsLoading(true);
             const res = await axios
               .post('https://alphadev-server.herokuapp.com/user/api/signup', {
                 username: name,
@@ -61,9 +68,12 @@ export const AuthProvider = ({children}) => {
                 // console.log('signup response : ', response);
                 // console.log('signup success : ', response.data.user);
               });
+            alert('Signup Succes');
           } catch (error) {
             console.log('signup erorr :', error.message);
             alert('gagal Signup');
+          } finally {
+            setIsLoading(false);
           }
         },
         logout: async () => {
