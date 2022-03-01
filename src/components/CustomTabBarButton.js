@@ -1,13 +1,14 @@
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
+import TouchableScale from 'react-native-touchable-scale';
 
 import {IconVr} from '../assets';
 
 const CustomTabBarButton = ({onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
+    <TouchableScale onPress={onPress} style={styles.buttonContainer}>
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
@@ -15,7 +16,7 @@ const CustomTabBarButton = ({onPress}) => {
         style={styles.buttonBackground}>
         <IconVr width={40} height={40} />
       </LinearGradient>
-    </TouchableOpacity>
+    </TouchableScale>
   );
 };
 
@@ -34,5 +35,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#053DC7',
     justifyContent: 'center',
     alignItems: 'center',
+    elevation: 3,
   },
 });

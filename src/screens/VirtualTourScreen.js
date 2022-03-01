@@ -1,5 +1,4 @@
 import {
-  ActivityIndicator,
   RefreshControl,
   ScrollView,
   StatusBar,
@@ -9,6 +8,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import LoadingAnimation from '../components/LoadingAnimation';
 
 const VirtualTourScreen = () => {
   const [isLoading, setLoading] = useState(false);
@@ -28,6 +28,9 @@ const VirtualTourScreen = () => {
       setData(res.data.articles);
     } catch (error) {
       console.log('getdata : ', error);
+      setTimeout(() => {
+        getData();
+      }, 2000);
     } finally {
       setLoading(false);
     }
@@ -44,20 +47,20 @@ const VirtualTourScreen = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <ScrollView
-        refreshControl={
-          <RefreshControl
-            titleColor="#053DC7"
-            refreshing={false}
-            onRefresh={getData}
-          />
-        }>
-        {isLoading ? (
-          <ActivityIndicator size="large" color="#053DC7" />
-        ) : (
+      {isLoading ? (
+        <LoadingAnimation />
+      ) : (
+        <ScrollView
+          refreshControl={
+            <RefreshControl
+              titleColor="#053DC7"
+              refreshing={false}
+              onRefresh={getData}
+            />
+          }>
           <Text>{JSON.stringify(data)}</Text>
-        )}
-      </ScrollView>
+        </ScrollView>
+      )}
     </View>
   );
 };

@@ -5,6 +5,8 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ToastAndroid,
+  ActivityIndicator,
 } from 'react-native';
 import React, {useContext, useState} from 'react';
 
@@ -15,7 +17,6 @@ import FormInput from '../components/FormInput';
 
 import {windowHeight} from '../utils/Dimentions';
 import {AuthContext} from '../navigation/AuthProvider';
-import LoadingAnimation from '../components/LoadingAnimation';
 
 const SignupScreen = ({navigation}) => {
   const [name, setName] = useState();
@@ -30,14 +31,12 @@ const SignupScreen = ({navigation}) => {
       if (confirmPassword === password && name && number) {
         signup(name, number, password);
       } else if (!name || !number || !password) {
-        alert('Error!');
+        ToastAndroid.show('Masukan input dengan benar!', ToastAndroid.LONG);
       } else if (confirmPassword !== password) {
-        alert('Password tidak cocok!');
+        ToastAndroid.show('Kata sandi tidak cocok!', ToastAndroid.LONG);
       }
     } catch (error) {
       console.log('check password error : ', error.message);
-    } finally {
-      navigation.replace('Login');
     }
   };
 
@@ -74,10 +73,16 @@ const SignupScreen = ({navigation}) => {
         <View style={{alignItems: 'center', marginBottom: 20}}>
           <TouchableOpacity style={styles.buttonDaftar} onPress={CheckPassword}>
             <Text style={styles.buttonText}>Daftar</Text>
+            {isLoading ? (
+              <ActivityIndicator
+                style={{marginLeft: 5}}
+                size={15}
+                color="#ffffff"
+              />
+            ) : null}
           </TouchableOpacity>
         </View>
       </LinearGradient>
-      {isLoading ? <LoadingAnimation /> : null}
     </View>
   );
 };
@@ -127,6 +132,8 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     alignItems: 'center',
     padding: 12,
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   buttonText: {
     fontFamily: 'Montserrat-SemiBold',

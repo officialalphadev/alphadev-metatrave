@@ -5,6 +5,8 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ToastAndroid,
+  ActivityIndicator,
 } from 'react-native';
 import React, {useContext, useState} from 'react';
 
@@ -13,7 +15,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import {ImageHeaderLogin} from '../assets';
 import FormInput from '../components/FormInput';
 import {AuthContext} from '../navigation/AuthProvider';
-import LoadingAnimation from '../components/LoadingAnimation';
 
 import {windowHeight, windowWidth} from '../utils/Dimentions';
 
@@ -50,18 +51,27 @@ const LoginScreen = ({navigation}) => {
             onPress={() =>
               number && password
                 ? login(number, password)
-                : alert('Masukan number dan password!')
+                : ToastAndroid.show(
+                    'Masukan nomor handphone dan password!',
+                    ToastAndroid.LONG,
+                  )
             }>
             <Text style={styles.buttonText}>Masuk</Text>
+            {isLoading ? (
+              <ActivityIndicator
+                style={{marginLeft: 5}}
+                size={15}
+                color="#ffffff"
+              />
+            ) : null}
           </TouchableOpacity>
         </View>
         <TouchableOpacity
           style={styles.textWrapper}
           onPress={() => navigation.navigate('Signup')}>
-          <Text style={styles.text}>Tidak punya akun? Buat akun baru</Text>
+          <Text style={styles.text}>Belum punya akun? Buat akun baru</Text>
         </TouchableOpacity>
       </LinearGradient>
-      {isLoading ? <LoadingAnimation /> : null}
     </View>
   );
 };
@@ -111,6 +121,8 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     alignItems: 'center',
     padding: 12,
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   buttonText: {
     fontFamily: 'Montserrat-SemiBold',

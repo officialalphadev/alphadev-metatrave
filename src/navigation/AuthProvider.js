@@ -3,6 +3,7 @@ import React, {createContext, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import axios from 'axios';
+import {ToastAndroid} from 'react-native';
 
 export const AuthContext = createContext();
 
@@ -35,7 +36,7 @@ export const AuthProvider = ({children}) => {
         login: async (number, password) => {
           try {
             setIsLoading(true);
-            const res = await axios
+            await axios
               .post('https://alphadev-server.herokuapp.com/user/api/signin', {
                 noHp: number,
                 password: password,
@@ -44,12 +45,12 @@ export const AuthProvider = ({children}) => {
                 console.log('response', response.data.User);
                 SaveSessionLogin(response.data.User.id);
                 setUser(true);
+                ToastAndroid.show('Berhasil masuk!', ToastAndroid.LONG);
               });
           } catch (error) {
-            // console.log(error);
             console.log(error.message);
             console.log('gagal login');
-            alert('gagal login');
+            ToastAndroid.show('Gagal masuk!', ToastAndroid.LONG);
           } finally {
             setIsLoading(false);
           }
@@ -57,7 +58,7 @@ export const AuthProvider = ({children}) => {
         signup: async (name, number, password) => {
           try {
             setIsLoading(true);
-            const res = await axios
+            await axios
               .post('https://alphadev-server.herokuapp.com/user/api/signup', {
                 username: name,
                 email: 'test@gmail.com',
@@ -65,13 +66,12 @@ export const AuthProvider = ({children}) => {
                 password: password,
               })
               .then(function (response) {
-                // console.log('signup response : ', response);
-                // console.log('signup success : ', response.data.user);
+                console.log('response', response.data);
               });
-            alert('Signup Succes');
+            ToastAndroid.show('Berhasil daftar!', ToastAndroid.LONG);
           } catch (error) {
             console.log('signup erorr :', error.message);
-            alert('gagal Signup');
+            ToastAndroid.show('Gagal daftar!', ToastAndroid.LONG);
           } finally {
             setIsLoading(false);
           }
@@ -80,9 +80,10 @@ export const AuthProvider = ({children}) => {
           try {
             await AsyncStorage.removeItem('userId');
             setUser(false);
+            ToastAndroid.show('Berhasil keluar!', ToastAndroid.LONG);
           } catch (error) {
             console.log(error);
-            alert('gagal logout');
+            ToastAndroid.show('Gagal keluar!', ToastAndroid.LONG);
           }
         },
       }}>
