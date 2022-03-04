@@ -1,4 +1,11 @@
-import {StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -8,7 +15,7 @@ import {IconCart, IconSearch} from '../assets';
 
 import {windowWidth} from '../utils/Dimentions';
 
-const CustomHeaderHome = ({onPress}) => {
+const CustomHeaderHome = ({onPressSearch, onPress}) => {
   const Notification = true;
 
   return (
@@ -18,10 +25,19 @@ const CustomHeaderHome = ({onPress}) => {
       colors={['#053DC7', '#05B8C7']}
       style={styles.headerContainer}>
       <SafeAreaView style={styles.headerWrapper}>
-        <View style={styles.searchWrapper}>
-          <IconSearch width={32} height={32} />
-          <TextInput style={styles.search} placeholder="Cari wisata" />
-        </View>
+        <TouchableWithoutFeedback onPress={onPressSearch}>
+          <View style={styles.searchWrapper}>
+            <IconSearch width={32} height={32} />
+            <Text
+              style={{
+                fontFamily: 'Montserrat-Regular',
+                fontSize: 14,
+                color: '#BABABA',
+              }}>
+              Cari Wisata
+            </Text>
+          </View>
+        </TouchableWithoutFeedback>
         <TouchableOpacity onPress={onPress}>
           {Notification ? <View style={styles.dot}></View> : null}
           <IconCart width={32} height={32} />
@@ -47,7 +63,8 @@ const styles = StyleSheet.create({
   searchWrapper: {
     backgroundColor: '#ffffff',
     borderRadius: 30,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
+    paddingVertical: 5,
     width: (windowWidth * 260) / 360,
     flexDirection: 'row',
     alignItems: 'center',

@@ -1,22 +1,23 @@
-import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import LoadingAnimation from '../components/LoadingAnimation';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-const CartScreen = () => {
+const SearchScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar
-        translucent={true}
+        translucent
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <LoadingAnimation />
-      <Button title="TEST" />
+      <SafeAreaView>
+        <Text>SearchScreen</Text>
+      </SafeAreaView>
     </View>
   );
 };
 
-export default CartScreen;
+export default SearchScreen;
 
 const styles = StyleSheet.create({
   container: {

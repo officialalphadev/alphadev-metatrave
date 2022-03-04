@@ -5,7 +5,7 @@ import TouchableScale from 'react-native-touchable-scale';
 
 import IconStar from '../assets/svg/icon-star.svg';
 
-const CardCategoryItem = ({
+const CardRecomendationItem = ({
   image,
   onPress,
   name,
@@ -70,11 +70,13 @@ const CardCategoryItem = ({
   );
 };
 
-export default CardCategoryItem;
+export default CardRecomendationItem;
 
 const styles = StyleSheet.create({
   cardRecomendationItemContainer: {
-    marginTop: 30,
+    marginBottom: 10,
+    marginTop: 5,
+    marginLeft: 16,
     padding: 10,
     backgroundColor: '#ffffff',
     borderRadius: 9,

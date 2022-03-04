@@ -5,11 +5,15 @@ import FocusAwareStatusBar from '../components/FocusAwareStatusBar';
 import CardCategory from '../components/CardCategory';
 import CardCategoryItem from '../components/CardCategoryItem';
 
+import Image2 from '../assets/img/img-2.png';
+
 import DataHome from '../data/Home.json';
 import {AuthContext} from '../navigation/AuthProvider';
+import CardRecomendation from '../components/CardRecomendation';
+import CardRecomendationItem from '../components/CardRecomendationItem';
+import TouchableScale from 'react-native-touchable-scale';
 
 const HomeScreen = ({navigation}) => {
-  const {dataLogin} = useContext(AuthContext);
   // const [isLoading, setLoading] = useState(true);
 
   const data = DataHome.categories;
@@ -17,7 +21,7 @@ const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <FocusAwareStatusBar
-        translucent={true}
+        translucent
         backgroundColor="transparent"
         barStyle="light-content"
       />
@@ -30,27 +34,98 @@ const HomeScreen = ({navigation}) => {
         }
         showsVerticalScrollIndicator={false}
         style={styles.wrapper}>
-        {data.map((category, index1) => {
-          return (
-            <CardCategory key={`category-${index1}`} title={category.name}>
-              <View style={{flexDirection: 'row'}}>
-                {category.items.map((item, index2) => {
-                  return (
-                    <CardCategoryItem
-                      key={`category-${index1}-item-${index2}`}
-                      image={item.imageUrl}
-                      name={item.name}
-                      city={item.city}
-                      price={item.price}
-                      onPress={() => navigation.navigate('DetailWisata', item)}
-                    />
-                  );
-                })}
-                <View style={{width: 16}} />
-              </View>
-            </CardCategory>
-          );
-        })}
+        <CardRecomendation
+          title="Wisata Disekitar Anda"
+          onPress={() =>
+            navigation.navigate('Category', {title: 'Wisata Disekitar Anda'})
+          }>
+          <CardRecomendationItem
+            name="Curug Putri Palutungan"
+            city="Cisantana Kecamatan Cigugur"
+            detailCity="Kabupaten Kuningan"
+            price="Rp 21.000"
+            rate="4.9"
+            image={Image2}
+          />
+          <CardRecomendationItem
+            name="Curug Putri Palutungan"
+            city="Cisantana Kecamatan Cigugur"
+            detailCity="Kabupaten Kuningan"
+            price="Rp 21.000"
+            rate="4.9"
+            image={Image2}
+          />
+          <CardRecomendationItem
+            name="Curug Putri Palutungan"
+            city="Cisantana Kecamatan Cigugur"
+            detailCity="Kabupaten Kuningan"
+            price="Rp 21.000"
+            rate="4.9"
+            image={Image2}
+          />
+          <CardRecomendationItem
+            name="Curug Putri Palutungan"
+            city="Cisantana Kecamatan Cigugur"
+            detailCity="Kabupaten Kuningan"
+            price="Rp 21.000"
+            rate="4.9"
+            image={Image2}
+          />
+          <CardRecomendationItem
+            name="Curug Putri Palutungan"
+            city="Cisantana Kecamatan Cigugur"
+            detailCity="Kabupaten Kuningan"
+            price="Rp 21.000"
+            rate="4.9"
+            image={Image2}
+          />
+          <View style={{marginRight: 14}}></View>
+        </CardRecomendation>
+        <CardCategory title="Kategori Wisata">
+          <TouchableScale
+            onPress={() =>
+              navigation.navigate('Category', {title: 'Wisata Alam'})
+            }
+            style={{
+              width: '100%',
+              height: 130,
+              backgroundColor: '#C4C4C4',
+              borderRadius: 20,
+            }}></TouchableScale>
+          <TouchableScale
+            onPress={() =>
+              navigation.navigate('Category', {title: 'Wisata Edukasi'})
+            }
+            style={{
+              width: '100%',
+              height: 130,
+              backgroundColor: '#C4C4C4',
+              borderRadius: 20,
+              marginTop: 20,
+            }}></TouchableScale>
+          <TouchableScale
+            onPress={() =>
+              navigation.navigate('Category', {title: 'Wisata Religi'})
+            }
+            style={{
+              width: '100%',
+              height: 130,
+              backgroundColor: '#C4C4C4',
+              borderRadius: 20,
+              marginTop: 20,
+            }}></TouchableScale>
+          <TouchableScale
+            onPress={() =>
+              navigation.navigate('Category', {title: 'Wisata Konversi'})
+            }
+            style={{
+              width: '100%',
+              height: 130,
+              backgroundColor: '#C4C4C4',
+              borderRadius: 20,
+              marginTop: 20,
+            }}></TouchableScale>
+        </CardCategory>
         <View style={{height: 120}} />
       </ScrollView>
     </View>

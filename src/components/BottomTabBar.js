@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-// import TouchableBounce from 'react-native-touchable-bounce';
 
 import {
   IconHome,
@@ -15,6 +14,7 @@ import {
 import {HomeScreen, SettingScreen, VirtualTourScreen} from '../screens';
 import CustomHeaderHome from './CustomHeaderHome';
 import CustomTabBarButton from './CustomTabBarButton';
+import TouchableScale from 'react-native-touchable-scale';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +23,7 @@ const MainApp = ({navigation}) => {
     <Tab.Navigator
       screenOptions={{
         tabBarShowLabel: false,
+        tabBarButton: props => <TouchableScale {...props} />,
         tabBarStyle: {
           ...styles.tabBar,
         },
@@ -38,9 +39,11 @@ const MainApp = ({navigation}) => {
               <IconHome width={32} height={32} />
             ),
           header: () => (
-            <CustomHeaderHome onPress={() => navigation.navigate('Cart')} />
+            <CustomHeaderHome
+              onPress={() => navigation.navigate('Cart')}
+              onPressSearch={() => navigation.navigate('Search')}
+            />
           ),
-          title: null,
         }}
       />
       <Tab.Screen
