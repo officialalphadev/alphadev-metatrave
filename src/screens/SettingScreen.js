@@ -13,11 +13,11 @@ import {AuthContext} from '../navigation/AuthProvider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ButtonSmall} from '../components/Buttons';
 import {
-  ColorNeutral300,
-  ColorNeutral400,
+  ColorNeutral100,
+  ColorNeutral200,
   ColorNeutral500,
-  ColorNeutral600,
   ColorNeutral900,
+  ColorPrimary500,
   ColorSecondary500,
 } from '../utils/Colours';
 import {AvatarLarge} from '../utils/Avatars';
@@ -58,16 +58,16 @@ const SettingScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar
-        translucent={true}
+        translucent
         backgroundColor="transparent"
-        barStyle="dark-content"
+        barStyle="light-content"
       />
       <ScrollView>
         <View style={{marginHorizontal: 16}}>
           <View
             style={{
-              marginVertical: 10,
-              backgroundColor: ColorNeutral300,
+              marginVertical: 20,
+              backgroundColor: ColorNeutral100,
               padding: 10,
               flexDirection: 'row',
             }}>
@@ -83,7 +83,7 @@ const SettingScreen = () => {
                 style={{
                   width: IconSmall,
                   height: IconSmall,
-                  backgroundColor: ColorNeutral400,
+                  backgroundColor: ColorPrimary500,
                   position: 'absolute',
                   right: 0,
                   bottom: 0,
@@ -107,11 +107,11 @@ const SettingScreen = () => {
               </Text>
             </View>
           </View>
-          <Text style={{...Heading3SemiBold, color: ColorNeutral600}}>
+          <Text style={{...Heading3SemiBold, color: ColorNeutral900}}>
             Saldo
           </Text>
           <View style={{marginVertical: 10}}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -125,7 +125,7 @@ const SettingScreen = () => {
                       style={{
                         width: IconSmall,
                         height: IconSmall,
-                        // backgroundColor: ColorNeutral400,
+                        // backgroundColor: ColorNeutral200,
                         borderRadius: 2,
                         marginRight: 10,
                       }}>
@@ -140,16 +140,16 @@ const SettingScreen = () => {
               </TouchableRipple>
             </View>
           </View>
-          <Text style={{...Heading3SemiBold, color: ColorNeutral600}}>
+          <Text style={{...Heading3SemiBold, color: ColorNeutral900}}>
             Pengaturan & Keamanan
           </Text>
           <View
             style={{
               marginTop: 10,
               borderBottomWidth: 1,
-              borderColor: ColorNeutral400,
+              borderColor: ColorNeutral200,
             }}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -163,7 +163,7 @@ const SettingScreen = () => {
                       style={{
                         width: IconSmall,
                         height: IconSmall,
-                        // backgroundColor: ColorNeutral400,
+                        // backgroundColor: ColorNeutral200,
                         borderRadius: 2,
                         marginRight: 10,
                       }}>
@@ -179,7 +179,7 @@ const SettingScreen = () => {
             </View>
           </View>
           <View style={{marginBottom: 10}}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -193,7 +193,7 @@ const SettingScreen = () => {
                       style={{
                         width: IconSmall,
                         height: IconSmall,
-                        // backgroundColor: ColorNeutral400,
+                        // backgroundColor: ColorNeutral200,
                         borderRadius: 2,
                         marginRight: 10,
                       }}>
@@ -208,16 +208,16 @@ const SettingScreen = () => {
               </TouchableRipple>
             </View>
           </View>
-          <Text style={{...Heading3SemiBold, color: ColorNeutral600}}>
+          <Text style={{...Heading3SemiBold, color: ColorNeutral900}}>
             Pilihan
           </Text>
           <View
             style={{
               marginTop: 10,
               borderBottomWidth: 1,
-              borderColor: ColorNeutral400,
+              borderColor: ColorNeutral200,
             }}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -239,9 +239,9 @@ const SettingScreen = () => {
           <View
             style={{
               borderBottomWidth: 1,
-              borderColor: ColorNeutral400,
+              borderColor: ColorNeutral200,
             }}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -261,9 +261,9 @@ const SettingScreen = () => {
           <View
             style={{
               borderBottomWidth: 1,
-              borderColor: ColorNeutral400,
+              borderColor: ColorNeutral200,
             }}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -284,9 +284,9 @@ const SettingScreen = () => {
             style={{
               marginBottom: 10,
               borderBottomWidth: 1,
-              borderColor: ColorNeutral400,
+              borderColor: ColorNeutral200,
             }}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => null}>
@@ -304,7 +304,7 @@ const SettingScreen = () => {
             </View>
           </View>
           <View style={{marginVertical: 10}}>
-            <View style={{backgroundColor: ColorNeutral300}}>
+            <View style={{backgroundColor: ColorNeutral100}}>
               <TouchableRipple
                 style={{padding: 10, width: '100%'}}
                 onPress={() => logout()}>
@@ -318,7 +318,7 @@ const SettingScreen = () => {
                       style={{
                         width: IconSmall,
                         height: IconSmall,
-                        // backgroundColor: ColorNeutral400,
+                        // backgroundColor: ColorNeutral200,
                         borderRadius: 2,
                         marginRight: 10,
                       }}>

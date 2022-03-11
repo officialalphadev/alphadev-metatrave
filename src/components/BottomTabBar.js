@@ -17,6 +17,7 @@ import TouchableScale from 'react-native-touchable-scale';
 import {Body1} from '../utils/Bodys';
 import {ColorPrimary500} from '../utils/Colours';
 import {IconMedium} from '../utils/Icons';
+import CustomHeaderSetting from './CustomHeaderSetting';
 
 const Tab = createBottomTabNavigator();
 
@@ -85,6 +86,7 @@ const MainApp = ({navigation}) => {
             color: '#262626',
           },
           headerShadowVisible: false,
+          header: () => <CustomHeaderSetting />,
         }}
       />
     </Tab.Navigator>

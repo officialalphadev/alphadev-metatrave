@@ -5,9 +5,17 @@ import {Body1} from '../utils/Bodys';
 import {RoundedCornerCardSmall} from '../utils/RoundedCorners';
 import TouchableScale from 'react-native-touchable-scale';
 
-const CardIcon = ({children, width, height, backgroundColor, title}) => {
+const CardIcon = ({
+  children,
+  width,
+  height,
+  backgroundColor,
+  title,
+  onPress,
+}) => {
   return (
     <TouchableScale
+      onPress={onPress}
       style={{
         alignItems: 'center',
         justifyContent: 'center',

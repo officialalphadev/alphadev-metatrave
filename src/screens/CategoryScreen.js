@@ -1,17 +1,20 @@
-import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
+import {ScrollView, StatusBar, View} from 'react-native';
 import React, {useEffect} from 'react';
 
 import CardCategoryItem from '../components/CardCategoryItem';
 
 import Image2 from '../assets/img/img-2.png';
+import {useNavigation} from '@react-navigation/native';
 
-const CategoryScreen = ({route, navigation}) => {
+const CategoryScreen = ({route}) => {
+  const navigation = useNavigation();
+
   useEffect(() => {
     navigation.setOptions({title: route.params.title});
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={{flex: 1, backgroundColor: '#ffffff'}}>
       <StatusBar
         translucent
         backgroundColor="transparent"
@@ -32,6 +35,7 @@ const CategoryScreen = ({route, navigation}) => {
             price="Rp 21.000"
             rate="4.9"
             image={Image2}
+            style={{marginTop: 20}}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -40,6 +44,7 @@ const CategoryScreen = ({route, navigation}) => {
             price="Rp 21.000"
             rate="4.9"
             image={Image2}
+            style={{marginTop: 20}}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -48,6 +53,7 @@ const CategoryScreen = ({route, navigation}) => {
             price="Rp 21.000"
             rate="4.9"
             image={Image2}
+            style={{marginTop: 20}}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -56,6 +62,7 @@ const CategoryScreen = ({route, navigation}) => {
             price="Rp 21.000"
             rate="4.9"
             image={Image2}
+            style={{marginTop: 20}}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -64,6 +71,7 @@ const CategoryScreen = ({route, navigation}) => {
             price="Rp 21.000"
             rate="4.9"
             image={Image2}
+            style={{marginTop: 20}}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -72,37 +80,13 @@ const CategoryScreen = ({route, navigation}) => {
             price="Rp 21.000"
             rate="4.9"
             image={Image2}
-          />
-          <CardCategoryItem
-            name="Curug Putri Palutungan"
-            city="Cisantana Kecamatan Cigugur"
-            detailCity="Kabupaten Kuningan"
-            price="Rp 21.000"
-            rate="4.9"
-            image={Image2}
-          />
-          <CardCategoryItem
-            name="Curug Putri Palutungan"
-            city="Cisantana Kecamatan Cigugur"
-            detailCity="Kabupaten Kuningan"
-            price="Rp 21.000"
-            rate="4.9"
-            image={Image2}
+            style={{marginTop: 20}}
           />
         </View>
-        <View style={{height: 40}} />
+        <View style={{height: 20}} />
       </ScrollView>
     </View>
   );
 };
 
 export default CategoryScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-  },
-});

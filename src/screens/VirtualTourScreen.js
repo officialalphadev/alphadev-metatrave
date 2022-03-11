@@ -1,15 +1,5 @@
-import {
-  Button,
-  Image,
-  RefreshControl,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {RefreshControl, ScrollView, StatusBar, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import axios from 'axios';
 import LoadingAnimation from '../components/LoadingAnimation';
 import TouchableScale from 'react-native-touchable-scale';
@@ -20,6 +10,7 @@ import Vista3 from '../assets/img/3dvista-3.jpg';
 import Vista4 from '../assets/img/3dvista-4.jpg';
 import {ColorNeutral300, ColorNeutral900} from '../utils/Colours';
 import {RoundedCornerCardMedium} from '../utils/RoundedCorners';
+import CardVirtualTour from '../components/CardVirtualTour';
 
 const VirtualTourScreen = ({navigation}) => {
   const [isLoading, setLoading] = useState(false);
@@ -52,7 +43,7 @@ const VirtualTourScreen = ({navigation}) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={{flex: 1, backgroundColor: '#ffffff'}}>
       <StatusBar
         translucent={true}
         backgroundColor="transparent"
@@ -80,98 +71,26 @@ const VirtualTourScreen = ({navigation}) => {
           />
         }>
         <View style={{paddingHorizontal: 16, paddingVertical: 5}}>
-          <TouchableScale
-            style={{height: 150, width: '100%', marginVertical: 10}}
-            onPress={() =>
-              navigation.navigate('Webview', {
-                data: 'https://alt.3dvista.com/samples/real_estate_virtual_tour.html',
-              })
-            }>
-            <View
-              style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: ColorNeutral300,
-                overflow: 'hidden',
-                elevation: 10,
-                shadowColor: ColorNeutral900,
-                ...RoundedCornerCardMedium,
-              }}>
-              <Image
-                source={Vista1}
-                style={{width: '100%', height: '100%', resizeMode: 'cover'}}
-              />
-            </View>
-          </TouchableScale>
-          <TouchableScale
-            style={{height: 150, width: '100%', marginVertical: 10}}
-            onPress={() =>
-              navigation.navigate('Webview', {
-                data: 'https://storage.net-fs.com/hosting/2727323/353/index.htm',
-              })
-            }>
-            <View
-              style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: ColorNeutral300,
-                overflow: 'hidden',
-                elevation: 10,
-                shadowColor: ColorNeutral900,
-                ...RoundedCornerCardMedium,
-              }}>
-              <Image
-                source={Vista2}
-                style={{width: '100%', height: '100%', resizeMode: 'cover'}}
-              />
-            </View>
-          </TouchableScale>
-          <TouchableScale
-            style={{height: 150, width: '100%', marginVertical: 10}}
-            onPress={() =>
-              navigation.navigate('Webview', {
-                data: 'https://storage.net-fs.com/hosting/2727323/355/',
-              })
-            }>
-            <View
-              style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: ColorNeutral300,
-                overflow: 'hidden',
-                elevation: 10,
-                shadowColor: ColorNeutral900,
-                ...RoundedCornerCardMedium,
-              }}>
-              <Image
-                source={Vista3}
-                style={{width: '100%', height: '100%', resizeMode: 'cover'}}
-              />
-            </View>
-          </TouchableScale>
-          <TouchableScale
-            style={{height: 150, width: '100%', marginVertical: 10}}
-            onPress={() =>
-              navigation.navigate('Webview', {
-                data: 'https://storage.net-fs.com/hosting/2080/2/index.htm',
-              })
-            }>
-            <View
-              style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: ColorNeutral300,
-                overflow: 'hidden',
-                elevation: 10,
-                shadowColor: ColorNeutral900,
-                ...RoundedCornerCardMedium,
-              }}>
-              <Image
-                source={Vista4}
-                style={{width: '100%', height: '100%', resizeMode: 'cover'}}
-              />
-            </View>
-          </TouchableScale>
+          <CardVirtualTour
+            source={Vista1}
+            url="https://alt.3dvista.com/samples/real_estate_virtual_tour.html"
+            style={{marginVertical: 10}}
+          />
+          <CardVirtualTour
+            source={Vista2}
+            url="https://storage.net-fs.com/hosting/2727323/353/index.htm"
+            style={{marginVertical: 10}}
+          />
+          <CardVirtualTour
+            source={Vista3}
+            url="https://storage.net-fs.com/hosting/2727323/355/"
+            style={{marginVertical: 10}}
+          />
+          <CardVirtualTour
+            source={Vista4}
+            url="https://storage.net-fs.com/hosting/2080/2/index.htm"
+            style={{marginVertical: 10}}
+          />
         </View>
       </ScrollView>
     </View>
@@ -179,11 +98,3 @@ const VirtualTourScreen = ({navigation}) => {
 };
 
 export default VirtualTourScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // alignItems: 'center',
-    backgroundColor: '#ffffff',
-  },
-});

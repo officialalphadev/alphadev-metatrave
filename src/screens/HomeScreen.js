@@ -128,7 +128,8 @@ const HomeScreen = ({navigation}) => {
               backgroundColor={ColorSecondary500}
               width={IconLarge}
               height={IconLarge}
-              title="Kategori">
+              title="Kategori"
+              onPress={() => navigation.navigate('Categories')}>
               <IconCategory width={IconMedium} height={IconMedium} />
             </CardIcon>
             <CardIcon
