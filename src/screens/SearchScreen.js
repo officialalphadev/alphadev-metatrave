@@ -1,6 +1,14 @@
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  View,
+} from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import CardHistorySearch from '../components/CardHistorySearch';
+import Image2 from '../assets/img/img-2.png';
 
 const SearchScreen = () => {
   return (
@@ -10,9 +18,76 @@ const SearchScreen = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <SafeAreaView>
-        <Text>SearchScreen</Text>
-      </SafeAreaView>
+      <View style={{alignItems: 'flex-end', marginVertical: 10}}>
+        <TouchableOpacity style={{marginRight: 16}}>
+          <Text
+            style={{
+              fontFamily: 'Montserrat-SemiBold',
+              fontSize: 12,
+              color: '#053DC7',
+            }}>
+            Hapus
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <ScrollView>
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+        <CardHistorySearch
+          source={Image2}
+          name="Curug Putri Palutungan"
+          rate="4.9"
+          city="Cisantana Kecamatan Cigugur"
+          detailCity="Kabupaten Kuningan, Jawa Barat 4552"
+          price="Rp 30.000"
+        />
+      </ScrollView>
     </View>
   );
 };
@@ -22,8 +97,6 @@ export default SearchScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#ffffff',
   },
 });

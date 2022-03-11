@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -9,12 +9,14 @@ import {
   IconSetting,
   IconSettingActive,
   IconVr,
-  IconVrActive,
 } from '../assets';
 import {HomeScreen, SettingScreen, VirtualTourScreen} from '../screens';
 import CustomHeaderHome from './CustomHeaderHome';
 import CustomTabBarButton from './CustomTabBarButton';
 import TouchableScale from 'react-native-touchable-scale';
+import {Body1} from '../utils/Bodys';
+import {ColorPrimary500} from '../utils/Colours';
+import {IconMedium} from '../utils/Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,13 +36,16 @@ const MainApp = ({navigation}) => {
         options={{
           tabBarIcon: ({focused}) =>
             focused ? (
-              <IconHomeActive width={32} height={32} />
+              <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                <IconHomeActive width={IconMedium} height={IconMedium} />
+                <Text style={{...Body1, color: ColorPrimary500}}>Beranda</Text>
+              </View>
             ) : (
-              <IconHome width={32} height={32} />
+              <IconHome width={IconMedium} height={IconMedium} />
             ),
           header: () => (
             <CustomHeaderHome
-              onPress={() => navigation.navigate('Cart')}
+              onPressCart={() => navigation.navigate('Cart')}
               onPressSearch={() => navigation.navigate('Search')}
             />
           ),
@@ -55,12 +60,7 @@ const MainApp = ({navigation}) => {
               onPress={() => navigation.navigate('VirtualTour')}
             />
           ),
-          tabBarIcon: ({focused}) =>
-            focused ? (
-              <IconVrActive width={40} height={40} />
-            ) : (
-              <IconVr width={40} height={40} />
-            ),
+          tabBarIcon: <IconVr width={40} height={40} />,
         }}
       />
       <Tab.Screen
@@ -69,10 +69,22 @@ const MainApp = ({navigation}) => {
         options={{
           tabBarIcon: ({focused}) =>
             focused ? (
-              <IconSettingActive width={32} height={32} />
+              <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                <IconSettingActive width={IconMedium} height={IconMedium} />
+                <Text style={{...Body1, color: ColorPrimary500}}>
+                  Pengaturan
+                </Text>
+              </View>
             ) : (
-              <IconSetting width={32} height={32} />
+              <IconSetting width={IconMedium} height={IconMedium} />
             ),
+          title: 'Pengaturan',
+          headerTitleStyle: {
+            fontFamily: 'Montserrat-SemiBold',
+            fontSize: 16,
+            color: '#262626',
+          },
+          headerShadowVisible: false,
         }}
       />
     </Tab.Navigator>

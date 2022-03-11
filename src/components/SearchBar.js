@@ -3,10 +3,10 @@ import React, {useEffect, useRef} from 'react';
 import {windowWidth} from '../utils/Dimentions';
 
 const SearchBar = () => {
-  const InputFocus = useRef(null);
+  // const InputFocus = useRef(null);
 
   useEffect(() => {
-    InputFocus.current.focus();
+    // InputFocus.current.focus();
   }, []);
 
   return (
@@ -24,7 +24,8 @@ const SearchBar = () => {
       }}
       placeholderTextColor="#ffffff"
       placeholder="Cari Wisata"
-      ref={InputFocus}
+      // ref={InputFocus}
+      autoFocus
     />
   );
 };

@@ -1,0 +1,15 @@
+export const Body1 = {fontFamily: 'Montserrat-SemiBold', fontSize: 10};
+export const Body1SemiBold = {fontFamily: 'Montserrat-SemiBold', fontSize: 10};
+export const Body1Regular = {fontFamily: 'Montserrat-Regular', fontSize: 10};
+export const Body2 = {fontFamily: 'Montserrat-Regular', fontSize: 8};
+export const Body2SemiBold = {fontFamily: 'Montserrat-SemiBold', fontSize: 8};
+export const Body2Regular = {fontFamily: 'Montserrat-Regular', fontSize: 8};
+export const Body2Light = {fontFamily: 'Montserrat-Light', fontSize: 8};
+export const Body3 = {fontFamily: 'Montserrat-Regular', fontSize: 6};
+export const Body3SemiBold = {fontFamily: 'Montserrat-SemiBold', fontSize: 6};
+export const Body3Regular = {fontFamily: 'Montserrat-Regular', fontSize: 6};
+export const Body3Light = {fontFamily: 'Montserrat-Light', fontSize: 6};
+export const Body4 = {fontFamily: 'Montserrat-Regular', fontSize: 4};
+export const Body4SemiBold = {fontFamily: 'Montserrat-SemiBold', fontSize: 4};
+export const Body4Regular = {fontFamily: 'Montserrat-Regular', fontSize: 4};
+export const Body4Light = {fontFamily: 'Montserrat-Light', fontSize: 4};
