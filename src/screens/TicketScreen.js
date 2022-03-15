@@ -4,7 +4,7 @@ import CardCart from '../components/CardCart';
 import Image2 from '../assets/img/img-2.png';
 import {useNavigation} from '@react-navigation/native';
 
-const CartScreen = () => {
+const TicketScreen = () => {
   const navigation = useNavigation();
 
   return (
@@ -24,7 +24,7 @@ const CartScreen = () => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
-            onPress={() => navigation.navigate('DetailWisata')}
+            onPress={() => navigation.navigate('DetailTicket')}
           />
           <CardCart
             name="Curug Putri Palutungan"
@@ -34,7 +34,7 @@ const CartScreen = () => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
-            onPress={() => navigation.navigate('DetailWisata')}
+            onPress={() => navigation.navigate('DetailTicket')}
           />
           <CardCart
             name="Curug Putri Palutungan"
@@ -44,7 +44,7 @@ const CartScreen = () => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
-            onPress={() => navigation.navigate('DetailWisata')}
+            onPress={() => navigation.navigate('DetailTicket')}
           />
           <CardCart
             name="Curug Putri Palutungan"
@@ -54,7 +54,7 @@ const CartScreen = () => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
-            onPress={() => navigation.navigate('DetailWisata')}
+            onPress={() => navigation.navigate('DetailTicket')}
           />
           <CardCart
             name="Curug Putri Palutungan"
@@ -64,7 +64,7 @@ const CartScreen = () => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
-            onPress={() => navigation.navigate('DetailWisata')}
+            onPress={() => navigation.navigate('DetailTicket')}
           />
           <CardCart
             name="Curug Putri Palutungan"
@@ -74,7 +74,7 @@ const CartScreen = () => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
-            onPress={() => navigation.navigate('DetailWisata')}
+            onPress={() => navigation.navigate('DetailTicket')}
           />
           <View style={{height: 20}}></View>
         </View>
@@ -83,4 +83,4 @@ const CartScreen = () => {
   );
 };
 
-export default CartScreen;
+export default TicketScreen;

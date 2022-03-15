@@ -47,13 +47,14 @@ const MainApp = ({navigation}) => {
           header: () => (
             <CustomHeaderHome
               onPressCart={() => navigation.navigate('Cart')}
+              onPressTicket={() => navigation.navigate('Ticket')}
               onPressSearch={() => navigation.navigate('Search')}
             />
           ),
         }}
       />
       <Tab.Screen
-        name="VirtualTour"
+        name="VirtualTours"
         component={VirtualTourScreen}
         options={{
           tabBarButton: () => (

@@ -16,7 +16,8 @@ const CustomHeaderSetting = () => {
           style={{
             ...Heading3SemiBold,
             color: ColorNeutral100,
-            padding: 16,
+            paddingVertical: 20,
+            paddingHorizontal: 16,
           }}>
           Pengaturan
         </Text>

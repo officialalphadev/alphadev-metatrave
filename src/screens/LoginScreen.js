@@ -11,15 +11,16 @@ import {
 import React, {useContext, useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
-
-import {ImageHeaderLogin} from '../assets';
+import ImageLogin from '../assets/img/image-login.png';
 import FormInput from '../components/FormInput';
 import {AuthContext} from '../navigation/AuthProvider';
 
 import {windowHeight, windowWidth} from '../utils/Dimentions';
+import {ColorPrimary500, ColorSecondary500} from '../utils/Colours';
+import Buttons from '../components/Buttons';
 
 const LoginScreen = ({navigation}) => {
-  const [number, setNumber] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const {login, isLoading} = useContext(AuthContext);
@@ -28,35 +29,36 @@ const LoginScreen = ({navigation}) => {
     <View style={styles.container}>
       <StatusBar backgroundColor="#ffffff" barStyle={'dark-content'} />
       <View style={styles.headerWrapper}>
-        <Image style={styles.imgHeader} source={ImageHeaderLogin} />
+        <Image style={styles.imgHeader} source={ImageLogin} />
       </View>
       <LinearGradient
-        colors={['#053DC7', '#05B8C7']}
+        colors={[ColorPrimary500, ColorSecondary500]}
         style={styles.formWrapper}>
         <Text style={styles.signup}>Masuk</Text>
         <View style={styles.inputWrapper}>
           <FormInput
-            placeholder="Nomor Handphone"
-            onChangeText={inputNumber => setNumber(inputNumber)}
+            placeholder="Masukan Email Anda"
+            onChangeText={inputEmail => setEmail(inputEmail)}
           />
           <FormInput
-            placeholder="Kata Sandi"
+            placeholder="Masukan Kata Sandi"
             secureTextEntry={true}
             onChangeText={inputPassword => setPassword(inputPassword)}
           />
         </View>
         <View style={{alignItems: 'center', marginBottom: 50}}>
-          <TouchableOpacity
-            style={styles.buttonLogin}
+          <Buttons
+            backgroundColor={ColorSecondary500}
+            title="Masuk"
+            type="large"
             onPress={() =>
-              number && password
-                ? login(number, password)
+              email && password
+                ? login(email, password)
                 : ToastAndroid.show(
-                    'Masukan nomor handphone dan password!',
+                    'Masukan Email dan Kata Sandi!',
                     ToastAndroid.LONG,
                   )
             }>
-            <Text style={styles.buttonText}>Masuk</Text>
             {isLoading ? (
               <ActivityIndicator
                 style={{marginLeft: 5}}
@@ -64,12 +66,13 @@ const LoginScreen = ({navigation}) => {
                 color="#ffffff"
               />
             ) : null}
-          </TouchableOpacity>
+          </Buttons>
         </View>
         <TouchableOpacity
           style={styles.textWrapper}
           onPress={() => navigation.navigate('Signup')}>
-          <Text style={styles.text}>Belum punya akun? Buat akun baru</Text>
+          <Text style={styles.text1}>Belum punya akun?</Text>
+          <Text style={styles.text2}>Buat akun baru</Text>
         </TouchableOpacity>
       </LinearGradient>
     </View>
@@ -91,8 +94,8 @@ const styles = StyleSheet.create({
     // marginBottom: windowHeight * 0.098,
   },
   imgHeader: {
-    width: 253,
-    height: 198,
+    width: 220,
+    height: 150,
   },
   formWrapper: {
     position: 'absolute',
@@ -130,10 +133,17 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
   textWrapper: {
-    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 50,
+    flexDirection: 'row',
   },
-  text: {
+  text1: {
+    fontFamily: 'Montserrat-Regular',
+    fontSize: 12,
+    color: '#ffffff',
+    marginRight: 5,
+  },
+  text2: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 12,
     color: '#ffffff',

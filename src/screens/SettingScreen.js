@@ -1,5 +1,5 @@
 import {
-  Button,
+  Image,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -7,25 +7,22 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import {AuthContext} from '../navigation/AuthProvider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {ButtonSmall} from '../components/Buttons';
 import {
   ColorNeutral100,
   ColorNeutral200,
   ColorNeutral500,
   ColorNeutral900,
-  ColorPrimary500,
   ColorSecondary500,
 } from '../utils/Colours';
 import {AvatarLarge} from '../utils/Avatars';
-import {
-  RoundedCornerCardExtraSmall,
-  RoundedCornerCardLarge,
-} from '../utils/RoundedCorners';
-import {IconMedium, IconSmall} from '../utils/Icons';
+import {RoundedCornerCardLarge} from '../utils/RoundedCorners';
+import {IconSmall} from '../utils/Icons';
+
+import ImageAvatar from '../assets/img/image-avatar.png';
 
 import IconPlus from '../assets/svg/icon-plus.svg';
 import IconArrowRight from '../assets/svg/icon-arrow-right.svg';
@@ -33,7 +30,7 @@ import IconAvatarDefault from '../assets/svg/icon-avatar-default.svg';
 import IconInfo from '../assets/svg/icon-info.svg';
 import IconPower from '../assets/svg/icon-power.svg';
 import IconWallet from '../assets/svg/icon-wallet.svg';
-import {Body1Regular, Body2Regular} from '../utils/Bodys';
+import {Body1Regular, Body1SemiBold, Body2Regular} from '../utils/Bodys';
 import {TouchableRipple} from 'react-native-paper';
 import {Heading3SemiBold} from '../utils/Headings';
 
@@ -76,19 +73,25 @@ const SettingScreen = () => {
                 style={{
                   width: AvatarLarge,
                   height: AvatarLarge,
-                  backgroundColor: ColorNeutral500,
+                  // backgroundColor: ColorNeutral500,
+                  overflow: 'hidden',
                   ...RoundedCornerCardLarge,
-                }}></View>
+                }}>
+                <Image
+                  source={ImageAvatar}
+                  style={{height: '100%', width: '100%'}}
+                />
+              </View>
               <TouchableOpacity
                 style={{
                   width: IconSmall,
                   height: IconSmall,
-                  backgroundColor: ColorPrimary500,
+                  backgroundColor: ColorSecondary500,
                   position: 'absolute',
                   right: 0,
-                  bottom: 0,
+                  bottom: 3,
                   overflow: 'hidden',
-                  ...RoundedCornerCardExtraSmall,
+                  borderRadius: 4,
                 }}>
                 <IconPlus width={IconSmall} height={IconSmall} />
               </TouchableOpacity>
@@ -99,8 +102,8 @@ const SettingScreen = () => {
                 justifyContent: 'space-around',
                 paddingVertical: 6,
               }}>
-              <Text style={{...Body1Regular, color: ColorNeutral900}}>
-                Slamet Dunia Akhirat
+              <Text style={{...Body1SemiBold, color: ColorNeutral900}}>
+                Metatrave
               </Text>
               <Text style={{...Body2Regular, color: ColorNeutral900}}>
                 Masuk Dengan Google
@@ -230,7 +233,7 @@ const SettingScreen = () => {
                     Versi App
                   </Text>
                   <Text style={{...Body1Regular, color: ColorNeutral900}}>
-                    1.1.0
+                    1.21.0
                   </Text>
                 </View>
               </TouchableRipple>

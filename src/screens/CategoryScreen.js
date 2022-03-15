@@ -36,6 +36,7 @@ const CategoryScreen = ({route}) => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
+            onPress={() => navigation.navigate('DetailWisata')}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -45,6 +46,7 @@ const CategoryScreen = ({route}) => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
+            onPress={() => navigation.navigate('DetailWisata')}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -54,6 +56,7 @@ const CategoryScreen = ({route}) => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
+            onPress={() => navigation.navigate('DetailWisata')}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -63,6 +66,7 @@ const CategoryScreen = ({route}) => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
+            onPress={() => navigation.navigate('DetailWisata')}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -72,6 +76,7 @@ const CategoryScreen = ({route}) => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
+            onPress={() => navigation.navigate('DetailWisata')}
           />
           <CardCategoryItem
             name="Curug Putri Palutungan"
@@ -81,6 +86,7 @@ const CategoryScreen = ({route}) => {
             rate="4.9"
             image={Image2}
             style={{marginTop: 20}}
+            onPress={() => navigation.navigate('DetailWisata')}
           />
         </View>
         <View style={{height: 20}} />

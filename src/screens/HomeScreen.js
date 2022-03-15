@@ -7,18 +7,13 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import React, {useContext} from 'react';
+import React from 'react';
 
 import FocusAwareStatusBar from '../components/FocusAwareStatusBar';
-import CardCategory from '../components/CardCategory';
-import CardCategoryItem from '../components/CardCategoryItem';
 
 import Image1 from '../assets/img/img-1.png';
 
 import DataHome from '../data/Home.json';
-import {AuthContext} from '../navigation/AuthProvider';
-import CardRecomendation from '../components/CardRecomendation';
-import CardRecomendationItem from '../components/CardRecomendationItem';
 import TouchableScale from 'react-native-touchable-scale';
 
 import {Heading2, Heading4, Heading5} from '../utils/Headings';
@@ -114,7 +109,8 @@ const HomeScreen = ({navigation}) => {
               backgroundColor={ColorSecondary500}
               width={IconLarge}
               height={IconLarge}
-              title="Virtual Tour">
+              title="Virtual Tour"
+              onPress={() => navigation.navigate('VirtualTour')}>
               <IconVr width={IconMedium} height={IconMedium} />
             </CardIcon>
             <CardIcon
@@ -245,7 +241,8 @@ const HomeScreen = ({navigation}) => {
                 elevation: 5,
                 marginLeft: 17,
                 ...RoundedCornerCardSmall,
-              }}>
+              }}
+              onPress={() => navigation.navigate('DetailWisata')}>
               <View
                 style={{
                   width: 211,
@@ -294,7 +291,8 @@ const HomeScreen = ({navigation}) => {
                 elevation: 5,
                 marginLeft: 17,
                 ...RoundedCornerCardSmall,
-              }}>
+              }}
+              onPress={() => navigation.navigate('DetailWisata')}>
               <View
                 style={{
                   width: 211,

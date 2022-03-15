@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   ToastAndroid,
   ActivityIndicator,
 } from 'react-native';
@@ -12,15 +11,17 @@ import React, {useContext, useState} from 'react';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import {ImageHeaderSignup} from '../assets';
+import ImageSignup from '../assets/img/image-login.png';
 import FormInput from '../components/FormInput';
 
 import {windowHeight} from '../utils/Dimentions';
 import {AuthContext} from '../navigation/AuthProvider';
+import Buttons from '../components/Buttons';
+import {ColorSecondary500} from '../utils/Colours';
 
 const SignupScreen = ({navigation}) => {
   const [name, setName] = useState();
-  const [number, setNumber] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
@@ -28,9 +29,9 @@ const SignupScreen = ({navigation}) => {
 
   const CheckPassword = async () => {
     try {
-      if (confirmPassword === password && name && number) {
-        signup(name, number, password);
-      } else if (!name || !number || !password) {
+      if (confirmPassword === password && name && email) {
+        signup(name, email, password);
+      } else if (!name || !email || !password) {
         ToastAndroid.show('Masukan input dengan benar!', ToastAndroid.LONG);
       } else if (confirmPassword !== password) {
         ToastAndroid.show('Kata sandi tidak cocok!', ToastAndroid.LONG);
@@ -44,7 +45,7 @@ const SignupScreen = ({navigation}) => {
     <View style={styles.container}>
       <StatusBar backgroundColor="#ffffff" barStyle={'dark-content'} />
       <View style={styles.headerWrapper}>
-        <Image style={styles.imgHeader} source={ImageHeaderSignup} />
+        <Image style={styles.imgHeader} source={ImageSignup} />
       </View>
       <LinearGradient
         colors={['#053DC7', '#05B8C7']}
@@ -56,23 +57,26 @@ const SignupScreen = ({navigation}) => {
             onChangeText={inputName => setName(inputName)}
           />
           <FormInput
-            placeholder="Nomor Handphone"
-            onChangeText={inputNumber => setNumber(inputNumber)}
+            placeholder="Ketikan Email Anda"
+            onChangeText={inputEmail => setEmail(inputEmail)}
           />
           <FormInput
-            placeholder="Kata Sandi"
+            placeholder="Ketikan Kata Sandi Anda"
             secureTextEntry={true}
             onChangeText={inputPassword => setPassword(inputPassword)}
           />
           <FormInput
-            placeholder="Konfirmasi Kata Sandi"
+            placeholder="Konfirmasi Kata Sandi Anda"
             secureTextEntry={true}
             onChangeText={inputConfirm => setConfirmPassword(inputConfirm)}
           />
         </View>
         <View style={{alignItems: 'center', marginBottom: 20}}>
-          <TouchableOpacity style={styles.buttonDaftar} onPress={CheckPassword}>
-            <Text style={styles.buttonText}>Daftar</Text>
+          <Buttons
+            backgroundColor={ColorSecondary500}
+            title="Daftar"
+            type="large"
+            onPress={CheckPassword}>
             {isLoading ? (
               <ActivityIndicator
                 style={{marginLeft: 5}}
@@ -80,7 +84,7 @@ const SignupScreen = ({navigation}) => {
                 color="#ffffff"
               />
             ) : null}
-          </TouchableOpacity>
+          </Buttons>
         </View>
       </LinearGradient>
     </View>
@@ -99,11 +103,10 @@ const styles = StyleSheet.create({
     marginTop: windowHeight * 0.092,
     justifyContent: 'center',
     alignItems: 'center',
-    // marginBottom: windowHeight * 0.098,
   },
   imgHeader: {
-    width: 258,
-    height: 181,
+    width: 220,
+    height: 150,
   },
   formWrapper: {
     position: 'absolute',

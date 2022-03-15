@@ -11,6 +11,8 @@ import {Heading3} from '../utils/Headings';
 import HeaderBackButton from '../components/HeaderBackButton';
 import {ColorNeutral900} from '../utils/Colours';
 import CategoriesScreen from '../screens/CategoriesScreen';
+import TicketScreen from '../screens/TicketScreen';
+import DetailTicketScreen from '../screens/DetailTicketScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,7 +39,11 @@ const AppStack = () => {
           animation: 'slide_from_bottom',
         }}
       />
-      <Stack.Screen name="DetailWisata" component={DetailWisataScreen} />
+      <Stack.Screen
+        name="DetailWisata"
+        component={DetailWisataScreen}
+        options={{title: '', headerTransparent: true}}
+      />
       <Stack.Screen
         name="Search"
         component={TopTabBar}
@@ -51,6 +57,20 @@ const AppStack = () => {
         options={{title: 'Kategori'}}
       />
       <Stack.Screen name="Category" component={CategoryScreen} />
+      <Stack.Screen
+        name="Ticket"
+        component={TicketScreen}
+        options={{
+          title: 'Tiket Saya',
+        }}
+      />
+      <Stack.Screen
+        name="DetailTicket"
+        component={DetailTicketScreen}
+        options={{
+          title: 'Rincian Ticket',
+        }}
+      />
       <Stack.Screen
         name="Cart"
         component={CartScreen}
